@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 3%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 270 91% 65%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 270 3% 11%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 270 3% 11%;
+  --muted-foreground: 0 0% 63%;
+  --accent: 270 3% 11%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 270 3% 11%;
+  --input: 270 3% 11%;
+  --ring: 270 91% 65%;
+  --radius: 0.75rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #330066 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  font-size: 16px; 
+  overflow-x: hidden;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  overflow-x: hidden; 
+}
+
+
+.glass-effect {
+  background: rgba(139, 69, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(139, 69, 255, 0.2); 
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent; 
+}
+
+.visa-card {
+  background: linear-gradient(145deg, rgba(56, 16, 107, 0.25) 0%, rgba(26, 0, 51, 0.7) 100%); 
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(167, 139, 250, 0.25); 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.visa-card:hover {
+  transform: translateY(-4px) scale(1.01); 
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.floating-animation {
+  animation: float 7s ease-in-out infinite; 
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.bolt-gradient {
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  color: white;
+}
+
+.bolt-gradient:hover {
+  background: linear-gradient(135deg, #7C3AED, #D946EF);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) { /* sm breakpoint */
+  body {
+    font-size: 15px; 
+  }
+  .text-xxs {
+    font-size: 0.65rem; 
+    line-height: 0.85rem;
+  }
+  .text-sm { font-size: 0.8125rem; line-height: 1.125rem; } /* ~13px */
+  .text-xs { font-size: 0.6875rem; line-height: 0.875rem; } /* ~11px */
+}
+
+
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+  min-height: 40px; 
+  min-width: 40px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
+  min-height: 40px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+select {
+  padding-right: 2rem; 
+}
+
+
+html {
+  -webkit-text-size-adjust: 100%; 
+}
+
+main {
+  flex-grow: 1; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  -webkit-overflow-scrolling: touch; 
+}
